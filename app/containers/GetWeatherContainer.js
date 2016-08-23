@@ -1,7 +1,12 @@
 const React = require('react');
+const weatherApiHelpers = require('../utilities/weatherApiHelpers');
 const GetWeather = require('../components/GetWeather');
 
 const GetWeatherContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   getInitialState: function () {
     return {
       location: ''
@@ -13,19 +18,21 @@ const GetWeatherContainer = React.createClass({
     this.setState({
       location: ''
     })
-    console.log(location);
+
+    this.context.router.push({
+      pathname: `/forecast/${location}`
+    })
   },
 
   handleUpdateLocation: function (event) {
-    // console.log(event.target.value);
     this.setState({ location: event.target.value });
   },
 
   render: function () {
     return (
       <GetWeather
-        onSubmitLocation={this.handleSubmitLocation}
         onUpdateLocation={this.handleUpdateLocation}
+        onSubmitLocation={this.handleSubmitLocation}
         location={this.state.location} />
     )
   }
