@@ -11,7 +11,8 @@ function Day (props) {
   return (
     <div
       className='col-md-3'
-      style={{marginBottom: '40px'}}>
+      style={{marginBottom: '40px'}}
+      onClick={() => props.onDayClick(props.index)}>
       <div>
         <img src={`./app/images/weather-icons/${icon}.svg`} style={styles.iconStyles}/>
       </div>
@@ -20,15 +21,15 @@ function Day (props) {
   )
 }
 
+
 function ForecastUI (props) {
   return (
-    <div onClick={props.onClick}>
+    <div>
       <h1 style={styles.cityHeader}>{props.location.weather.city.name}</h1>
       <h2 style={{marginBottom: '75px', fontFamily: 'Courier new', textAlign: 'center'}}>Select a Day</h2>
-      <div className='col-sm-10 col-sm-offset-1'
-           style={{cursor: 'pointer'}}>
-        {props.location.weather.list.map(function(day)
-          { return <Day key={day.dt} day={day} /> }
+      <div className='col-sm-10 col-sm-offset-1' style={{cursor: 'pointer'}}>
+        {props.location.weather.list.map(function(day, index)
+          { return <Day key={index} day={day} onDayClick={props.onDayClick} index={index} /> }
         )}
       </div>
     </div>
@@ -40,7 +41,7 @@ function Forecast (props) {
   ? <Loading speed={400} text='Loading forecast' />
   : <ForecastUI
       location={props.location}
-      onClick={props.onClick} />
+      onDayClick={props.onDayClick} />
 }
 
 

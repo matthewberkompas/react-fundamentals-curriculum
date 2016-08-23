@@ -14,7 +14,7 @@ const routes = (
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
       <Route path='/forecast/:search' component={ForecastContainer}>
-        <Route path='/details/:city' component={WeatherDetailsContainer} />
+        <Route path='details/:index' component={WeatherDetailsContainer} />
       </Route>
     </Route>
   </Router>

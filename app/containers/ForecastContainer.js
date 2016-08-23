@@ -24,14 +24,11 @@ const ForecastContainer = React.createClass({
       }.bind(this));
   },
 
-  handleClick: function () {
-    this.setState({
-      location: this.state.location
-    })
-
-    const city = this.state.location.weather.city.name;
+  handleDayClick: function (index) {
+    console.log("HANDLEDAYCLICK", index);
+    console.log(this.props);
     this.context.router.push({
-      pathname: `/details/${city}`
+      pathname: `${this.props.location.pathname}/details/${index}`
     })
   },
 
@@ -41,7 +38,7 @@ const ForecastContainer = React.createClass({
         <Forecast
           isLoading={this.state.isLoading}
           location={this.state.location}
-          onClick={this.handleClick}/>
+          onDayClick={this.handleDayClick}/>
       </div>
     )
   }
