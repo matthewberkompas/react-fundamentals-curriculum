@@ -13,9 +13,8 @@ const routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
-      <Route path='/forecast/:search' component={ForecastContainer}>
-        <Route path='details/:index' component={WeatherDetailsContainer} />
-      </Route>
+      <Route path='/forecast/:search' component={ForecastContainer} />
+      <Route path='details' component={WeatherDetailsContainer} />
     </Route>
   </Router>
 );

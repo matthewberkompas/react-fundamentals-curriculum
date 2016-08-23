@@ -30,10 +30,12 @@ const GetWeatherContainer = React.createClass({
 
   render: function () {
     return (
-      <GetWeather
-        onUpdateLocation={this.handleUpdateLocation}
-        onSubmitLocation={this.handleSubmitLocation}
-        location={this.state.location} />
+      <div>
+        <GetWeather
+          onUpdateLocation={this.handleUpdateLocation}
+          onSubmitLocation={this.handleSubmitLocation}
+          location={this.state.location} />
+      </div>
     )
   }
 })

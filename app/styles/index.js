@@ -4,6 +4,7 @@ const styles = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     position: 'absolute',
+    marginTop: '80px',
     height: '100%',
     width: '100%',
   },
@@ -13,7 +14,7 @@ const styles = {
   },
 
   cityHeader: {
-    marginTop: '75px',
+    marginTop: '0',
     marginBottom: '15px',
     fontFamily: 'Courier new',
     fontSize: '75px',
@@ -21,8 +22,9 @@ const styles = {
   },
 
   iconStyles: {
-    height: '100px',
-    width: '235px',
+    height: '150px',
+    width: '250px',
+    marginTop: '35px',
     marginBottom: '15px',
   }
 };

@@ -24,21 +24,20 @@ const ForecastContainer = React.createClass({
       }.bind(this));
   },
 
-  handleDayClick: function (index) {
-    console.log("HANDLEDAYCLICK", index);
-    console.log(this.props);
-    this.context.router.push({
-      pathname: `${this.props.location.pathname}/details/${index}`
-    })
-  },
+  // handleDayClick: function (index) {
+  //   console.log("HANDLEDAYCLICK", index);
+  //   console.log(this.props);
+  //   this.context.router.push({
+  //     pathname: `${this.props.location.pathname}/details/${index}`
+  //   })
+  // },
 
   render: function () {
     return (
       <div>
         <Forecast
           isLoading={this.state.isLoading}
-          location={this.state.location}
-          onDayClick={this.handleDayClick}/>
+          location={this.state.location} />
       </div>
     )
   }
